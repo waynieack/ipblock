@@ -3,6 +3,14 @@ This is a script that downloads subnets from www.ipdeny.com, creates an ASA obje
 
 Note - For an ASA 5510, at least 512Mb of memory is needed to configure the complete list of US subnets in a object group.  
 
+You will need to install the following perl modules:
+
+	Net::Netmask
+	Net::SSH::Expect
+	LWP::UserAgent
+	Time::HiRes
+	Array::Diff
+
 I only allow US subnets inboud to my firewall, I use the object group (PERMIT-US-IN) created by the script like this:
 
 	access-list outside extended permit object-group PERMIT-OUTSIDE-IN object-group PERMIT-US-IN any
